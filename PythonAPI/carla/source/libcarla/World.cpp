@@ -265,6 +265,7 @@ void export_world() {
     .def("get_vehicles_light_states", &GetVehiclesLightStates)
     .def("get_map", CONST_CALL_WITHOUT_GIL(cc::World, GetMap))
     .def("get_random_location_from_navigation", CALL_RETURNING_OPTIONAL_WITHOUT_GIL(cc::World, GetRandomLocationFromNavigation))
+    .def("is_location_reachable_by_pedestrian", CONST_CALL_WITHOUT_GIL_3(cc::World, IsLocationReachableByPedestrian, cg::Location, cg::Location, float), (arg("from"), arg("to"), arg("max_distance")))
     .def("get_spectator", CONST_CALL_WITHOUT_GIL(cc::World, GetSpectator))
     .def("get_settings", CONST_CALL_WITHOUT_GIL(cc::World, GetSettings))
     .def("apply_settings", &ApplySettings, (arg("settings"), arg("seconds")=10.0))

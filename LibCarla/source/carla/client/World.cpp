@@ -42,6 +42,10 @@ namespace client {
     return _episode.Lock()->GetRandomLocationFromNavigation();
   }
 
+  bool World::IsLocationReachableByPedestrian(carla::geom::Location from, carla::geom::Location to, float max_distance) const {
+    return _episode.Lock()->IsLocationReachableByPedestrian(from, to, max_distance);
+  }
+
   SharedPtr<Actor> World::GetSpectator() const {
     return _episode.Lock()->GetSpectator();
   }

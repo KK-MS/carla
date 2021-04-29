@@ -273,7 +273,9 @@ namespace detail {
     void UnregisterAIController(const WalkerAIController &controller);
 
     boost::optional<geom::Location> GetRandomLocationFromNavigation();
-
+  
+    bool IsLocationReachableByPedestrian(geom::Location from, geom::Location to, float max_distance);
+  
     std::shared_ptr<WalkerNavigation> GetNavigation() {
       return _episode->GetNavigation();
     }

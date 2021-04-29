@@ -74,6 +74,9 @@ namespace client {
     /// Get a random location from the pedestrians navigation mesh
     boost::optional<geom::Location> GetRandomLocationFromNavigation() const;
 
+    /// Returns if a location is reachable by a pedestrian
+    bool World::IsLocationReachableByPedestrian(carla::geom::Location from, carla::geom::Location to, float max_distance) const;
+  
     /// Return the spectator actor. The spectator controls the view in the
     /// simulator window.
     SharedPtr<Actor> GetSpectator() const;

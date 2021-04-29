@@ -246,6 +246,13 @@ namespace detail {
     return navigation->GetRandomLocation();
   }
 
+  bool Simulator::IsLocationReachableByPedestrian(carla::geom::Location from, carla::geom::Location to, float max_distance) {
+    DEBUG_ASSERT(_episode != nullptr);
+    auto navigation = _episode->CreateNavigationIfMissing();
+    DEBUG_ASSERT(navigation != nullptr);
+    return navigation->IsLocationReachable(from, to, max_distance);
+  }
+
   void Simulator::SetPedestriansCrossFactor(float percentage) {
     DEBUG_ASSERT(_episode != nullptr);
     auto navigation = _episode->CreateNavigationIfMissing();

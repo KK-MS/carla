@@ -59,6 +59,10 @@ namespace detail {
       _nav.AddWalker(walker_id, location);
     }
 
+    bool IsLocationReachable(carla::geom::Location from, carla::geom::Location to, float max_distance) {
+      return _nav.IsLocationReachable(from, to, max_distance);
+    }
+
     void Tick(std::shared_ptr<Episode> episode);
 
     // Get Random location in nav mesh
